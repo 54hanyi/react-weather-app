@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tw-weather-app/static/css/main.3f8b54ae.css",
-    "main.js": "/tw-weather-app/static/js/main.3ee8bacc.js",
+    "main.js": "/tw-weather-app/static/js/main.4c4fe6d0.js",
     "static/js/787.a04dda70.chunk.js": "/tw-weather-app/static/js/787.a04dda70.chunk.js",
     "service-worker.js": "/tw-weather-app/service-worker.js",
     "static/media/day-snowing.svg": "/tw-weather-app/static/media/day-snowing.ba1cbc7669611ee425e874e171d02e70.svg",
@@ -25,11 +25,11 @@
     "static/media/loading.svg": "/tw-weather-app/static/media/loading.f8d56fd58925a1aaab4f80f1d8865c03.svg",
     "static/media/night-clear.svg": "/tw-weather-app/static/media/night-clear.94eb7d671bc6d4dec6aa0b47038954df.svg",
     "main.3f8b54ae.css.map": "/tw-weather-app/static/css/main.3f8b54ae.css.map",
-    "main.3ee8bacc.js.map": "/tw-weather-app/static/js/main.3ee8bacc.js.map",
+    "main.4c4fe6d0.js.map": "/tw-weather-app/static/js/main.4c4fe6d0.js.map",
     "787.a04dda70.chunk.js.map": "/tw-weather-app/static/js/787.a04dda70.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f8b54ae.css",
-    "static/js/main.3ee8bacc.js"
+    "static/js/main.4c4fe6d0.js"
   ]
 }
