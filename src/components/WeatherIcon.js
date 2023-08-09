@@ -80,24 +80,6 @@ const weatherCode2Type = (weatherCode) => {
   return weatherType;
 };
 
-// const WeatherIcon = ({ weatherCode, moment }) => {
-//   const weatherType = useMemo(() => {
-//     const type = weatherCode2Type(weatherCode);
-//     console.log('weatherCode:', weatherCode);
-//     console.log('weatherType:', type);
-//     console.log('weatherTypes:', weatherTypes);
-
-//     return type;
-//   }, [weatherCode,]);
-
-//   console.log('moment:', moment);
-//   console.log('weatherType:', weatherType);
-
-//   const weatherIcon = weatherIcons[moment][weatherType];
-
-//   return <IconContainer>{weatherIcon}</IconContainer>;
-// };
-
 const WeatherIcon = ({ weatherCode, moment }) => {
   const weatherType = useMemo(() => weatherCode2Type(weatherCode), [
     weatherCode,
