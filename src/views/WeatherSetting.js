@@ -29,6 +29,7 @@ const StyledSelect = styled.select`
   display: block;
   box-sizing: border-box;
   background: transparent;
+  background-color: #37373B;
   border: 1px solid ${({ theme }) => theme.textColor};
   outline: none;
   width: 100%;

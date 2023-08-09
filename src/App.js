@@ -75,15 +75,15 @@ const App = () => {
             weatherElement={weatherElement}
             moment={moment}
             fetchWeather={fetchWeather}
-            setCurrentPage={handleCurrentPageChange}
+            handleCurrentPageChange={handleCurrentPageChange}
           />
         )}
 
         {currentPage === "WeatherSetting" && (
           <WeatherSetting
             cityName={cityName}
-            setCurrentCity={handleCurrentCityChange}
-            setCurrentPage={handleCurrentPageChange}
+            handleCurrentCityChange={handleCurrentCityChange}
+            handleCurrentPageChange={handleCurrentPageChange}
           />
         )}
       </Container>
