@@ -1,6 +1,6 @@
 {
-  "name": "tw-weather-app",
-  "homepage": "https://54hanyi.github.io/tw-weather-app",
+  "name": "react-weather-app",
+  "homepage": "https://54hanyi.github.io/react-weather-app",
   "version": "0.2.0",
   "private": true,
   "dependencies": {
@@ -35,7 +35,6 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:process-sunrise-sunset": "node src/scripts/generateSunriseAndSunsetData/process-sunrise-and-sunset.mjs",
     "build:sunrise-sunset": "node src/scripts/generateSunriseAndSunsetData/index.mjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

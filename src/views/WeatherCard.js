@@ -1,12 +1,12 @@
 import dayjs from 'dayjs';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-import WeatherIcon from "../components/WeatherIcon.js";
-import { ReactComponent as AirFlowIcon } from "../images/airFlow.svg";
-import { ReactComponent as RainIcon } from "../images/rain.svg";
-import { ReactComponent as RefreshIcon } from "../images/refresh.svg";
-import { ReactComponent as LoadingIcon } from "../images/loading.svg";
-import { ReactComponent as CogIcon } from "../images/cog.svg";
+import WeatherIcon from '../components/WeatherIcon.js';
+import { ReactComponent as AirFlowIcon } from '../images/airFlow.svg';
+import { ReactComponent as RainIcon } from '../images/rain.svg';
+import { ReactComponent as RefreshIcon } from '../images/refresh.svg';
+import { ReactComponent as LoadingIcon } from '../images/loading.svg';
+import { ReactComponent as CogIcon } from '../images/cog.svg';
 
 const WeatherCardWrapper = styled.div`
   position: relative;
@@ -92,7 +92,7 @@ const Refresh = styled.div`
     height: 15px;
     cursor: pointer;
     animation: rotate infinite 1.5s linear;
-    animation-duration: ${({ isLoading }) => (isLoading ? "1.5s" : "0s")};
+    animation-duration: ${({ isLoading }) => (isLoading ? '1.5s' : '0s')};
   }
 
   @keyframes rotate {
@@ -132,35 +132,38 @@ const WeatherCard = ({
     isLoading,
   } = weatherElement;
 
-  console.log('moment in WeatherCard:', moment);
-  console.log('weatherCode in WeatherCard:', weatherCode);
-
+  // console.log('moment in WeatherCard:', moment);
+  // console.log('weatherCode in WeatherCard:', weatherCode);
 
   return (
     <WeatherCardWrapper>
       <Cog onClick={() => handleCurrentPageChange('WeatherSetting')} />
       <Location>{cityName}</Location>
       <Description>
-        {description} {comfortability}
+        {description ? `${description} ${comfortability}` : '無法取得天氣描述'}
       </Description>
       <CurrentWeather>
         <Temperature>
-          {Math.round(temperature)} <Celsius>°C</Celsius>
+          {temperature !== undefined && temperature !== 'N/A' ? Math.round(temperature) : 'N/A'}{' '}
+          <Celsius>°C</Celsius>
         </Temperature>
         <WeatherIcon weatherCode={weatherCode} moment={moment} />
       </CurrentWeather>
       <AirFlow>
-        <AirFlowIcon /> {windSpeed} m/h
+        <AirFlowIcon /> {windSpeed !== undefined && windSpeed !== 'N/A' ? windSpeed : 'N/A'} m/h
       </AirFlow>
       <Rain>
-        <RainIcon /> {rainPossibility}%
+        <RainIcon />{' '}
+        {rainPossibility !== undefined && rainPossibility !== 'N/A' ? rainPossibility : 'N/A'}%
       </Rain>
       <Refresh onClick={fetchWeather} isLoading={isLoading}>
         最後觀測時間：
-        {new Intl.DateTimeFormat('zh-TW', {
-          hour: 'numeric',
-          minute: 'numeric',
-        }).format(dayjs(observationTime))}{' '}
+        {observationTime && observationTime !== 'N/A'
+          ? new Intl.DateTimeFormat('zh-TW', {
+              hour: 'numeric',
+              minute: 'numeric',
+            }).format(dayjs(observationTime))
+          : 'N/A'}{' '}
         {isLoading ? <LoadingIcon /> : <RefreshIcon />}
       </Refresh>
     </WeatherCardWrapper>
