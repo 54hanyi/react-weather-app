@@ -1,52 +1,93 @@
-1. **專案名稱與簡介**：
+# ⛅ 專案名稱：天氣應用程式
 
-   - 專案名稱：天氣應用程式
-   - 簡介：此專案是一個天氣應用程式，提供台灣各地的天氣資料，包括日出日落時間、氣溫、降雨機率等資訊，使用者可以選擇特定地區並查看當地的天氣狀況。
+提供台灣各地天氣資訊，包含氣溫、降雨機率與日出日落時間，支援主題切換與離線瀏覽！
 
-2. **技術堆疊**：
+---
 
-   - **前端框架**：React
-   - **狀態管理**：React Hooks（`useState`、`useEffect`、`useMemo` 等）
-   - **CSS 處理**：Emotion（`@emotion/styled`）用於樣式定義
-   - **天氣 API**：使用中央氣象局開放資料 API 抓取天氣資料(https://opendata.cwa.gov.tw/dist/opendata-swagger.html)
-   - **PWA 支援**：使用 `serviceWorkerRegistration` 進行 PWA 註冊，提供離線使用的能力
-   - **工具庫**：
-     - `node-fetch`：用於伺服器端抓取天氣資料
-     - `dotenv`：用於環境變數管理（API 金鑰）
-     - `dayjs`：用於日期時間的處理
-   - **其他技術**：
-     - 使用 `normalize.css` 標準化不同瀏覽器的預設樣式
-     - `fs` 模組與 `path` 用於檔案的讀寫和路徑管理
-     - `Intl.DateTimeFormat` 用於日期格式化
+## 🔎 專案背景與動機
 
-3. **專案展示**：
+此專案旨在提供一個即時且使用者友善的天氣查詢平台，使用者可以快速查詢全台各地區的天氣資訊。  
+除了基本的氣象數據，應用程式還結合了「日夜模式切換」與「PWA 離線支援」，提升使用體驗。  
+透過這個專案，我希望強化 API 串接、資料格式轉換、動態樣式變化與 React hooks 的實戰運用能力。
 
-   - 使用 GitHub Pages 部署，提供應用程式的預覽。
+---
 
-4. **功能描述**：
+## 🧪 使用技術與堆疊
 
-   - 從中央氣象局 API 抓取台灣各地的天氣資料。
-   - 顯示各地區的天氣資訊，包括日出、日落時間、氣溫、降雨機率等。
-   - 提供地區選擇，使用者可以查看特定地區的天氣。
-   - 支援日夜模式切換，根據日出日落自動改變主題樣式。
+| 技術                            | 說明                                                                                        |
+| ------------------------------- | ------------------------------------------------------------------------------------------- |
+| **React**                       | 建立 SPA 架構，使用 Functional Component 撰寫 UI                                            |
+| **React Hooks**                 | 使用 `useState`, `useEffect`, `useMemo` 管理狀態與效能優化                                  |
+| **Emotion (`@emotion/styled`)** | CSS-in-JS 方案，用於元件樣式設計                                                            |
+| **中央氣象局開放資料 API**      | 天氣資料來源（[官方 Swagger 文件](https://opendata.cwa.gov.tw/dist/opendata-swagger.html)） |
+| **PWA (Progressive Web App)**   | 使用 `serviceWorkerRegistration` 增加離線使用體驗                                           |
+| **dotenv**                      | 管理 API 金鑰與環境變數                                                                     |
+| **dayjs**                       | 處理與格式化日期、時間資訊                                                                  |
+| **node-fetch**                  | 用於伺服器端的 API 呼叫                                                                     |
+| **fs / path 模組**              | 處理靜態資源與本地檔案操作                                                                  |
+| **Intl.DateTimeFormat**         | 進行多語系與地區格式化處理                                                                  |
+| **normalize.css**               | 統一瀏覽器預設樣式，提升樣式一致性                                                          |
 
-5. **架構概述**：
+---
 
-   - **目錄結構**：
-     - `components/`：包含可重用的 UI 元件，例如 WeatherIcon。
-     - `views/`：包含主要的 UI 視圖，例如 WeatherCard、WeatherSetting。
-     - `utils/`：工具函式，例如檔案讀寫操作、幫助函式。
-     - `hooks/`：自定義 Hook（如 `useWeatherAPI`），用於抓取天氣資料。
-   - **狀態管理**：
-     - 使用 React 的 `useState` 和 `useEffect` 管理天氣資料及地區的選擇。
-     - 使用 `useMemo` 進行計算優化，減少不必要的重新渲染。
+## 🧩 功能亮點
 
-6. **挑戰與解決方案**：
+- ✅ **天氣查詢介面**：支援使用者選擇地區並即時查詢當地天氣
+- ✅ **氣象資訊顯示**：包含氣溫、降雨機率、日出與日落時間
+- ✅ **日夜模式切換**：根據地區的日出日落時間，自動切換應用程式主題風格
+- ✅ **離線支援**：透過 PWA 註冊服務，使用者可在無網路時繼續使用最後查詢結果
+- ✅ **自訂 Hook 管理資料抓取**：整合 `useWeatherAPI` 處理資料請求與轉換
 
-   - **資料抓取延遲與重試機制**：抓取天氣資料時可能會遇到網絡延遲，通過適當的錯誤處理和使用者提示（例如顯示 Loading 圖示）來解決。
-   - **日夜模式切換**：根據日出日落時間來自動切換主題，通過 `useEffect` 和 `useMemo` 實現動態主題改變。
+---
 
-7. **未來規劃**：
-   - 加入更多的天氣指標，例如紫外線指數、空氣品質等。
-   - 優化使用者介面，加入更多互動效果和視覺增強。
-   - 增加多語言支持。
+## 🧱 專案架構簡介
+
+📁 /components
+└─ 可重用元件，例如 WeatherIcon、SunriseText 等
+
+📁 /views
+└─ 頁面視圖，如 WeatherCard、WeatherSetting，顯示地區資訊與表單
+
+📁 /hooks
+└─ 自訂 hook，如 useWeatherAPI 處理資料抓取與狀態控制
+
+📁 /utils
+└─ 工具模組，如 API 管理、資料格式轉換、地區列表等
+
+📁 /assets
+└─ 圖示與靜態資源
+
+📁 /serviceWorker
+└─ PWA 註冊模組
+
+.env // API 金鑰與環境變數
+
+---
+
+## ⚙️ 開發過程中的挑戰與解決
+
+- 💡 **資料抓取延遲與失敗處理：**  
+  針對 API 資料請求建立 loading 狀態與錯誤處理提示，讓使用者清楚掌握查詢狀況。
+
+- 💡 **日夜主題切換邏輯：**  
+  根據地區回傳的日出日落時間，使用 `useEffect` 計算是否進入夜晚，並動態變更主題樣式。
+
+- 💡 **PWA 註冊與測試困難：**  
+  導入 `serviceWorkerRegistration` 並逐步測試離線快取功能，處理版本控制與資源快取問題。
+
+---
+
+## 🎓 學習收穫
+
+- 🔹 熟悉串接開放氣象資料並處理資料清洗與欄位對應
+- 🔹 實作日出日落時間影響主題變化的應用邏輯
+- 🔹 強化自訂 hook 與效能優化技巧（useMemo / useEffect 整合）
+- 🔹 學會建構基本 PWA 架構並測試離線能力
+- 🔹 練習 Emotion 的 styled components 用法，實現元件化樣式設計
+
+---
+
+## 🚀 線上展示與原始碼連結
+
+- 🔗 [👉 線上 Try ](https://54hanyi.github.io/react-weather-app/)
+- 🧑‍💻 [GitHub 原始碼](https://github.com/54hanyi/react-weather-app)
