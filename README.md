@@ -14,21 +14,38 @@
 
 ## 🧪 使用技術與堆疊
 
-| 技術                            | 說明                                                                                        |
-| ------------------------------- | ------------------------------------------------------------------------------------------- |
-| **React**                       | 建立 SPA 架構，使用 Functional Component 撰寫 UI                                            |
-| **React Hooks**                 | 使用 `useState`, `useEffect`, `useMemo` 管理狀態與效能優化                                  |
-| **Emotion (`@emotion/styled`)** | CSS-in-JS 方案，用於元件樣式設計                                                            |
-| **中央氣象局開放資料 API**      | 天氣資料來源（[官方 Swagger 文件](https://opendata.cwa.gov.tw/dist/opendata-swagger.html)） |
-| **PWA (Progressive Web App)**   | 使用 `serviceWorkerRegistration` 增加離線使用體驗                                           |
-| **dotenv**                      | 管理 API 金鑰與環境變數                                                                     |
-| **dayjs**                       | 處理與格式化日期、時間資訊                                                                  |
-| **node-fetch**                  | 用於伺服器端的 API 呼叫                                                                     |
-| **fs / path 模組**              | 處理靜態資源與本地檔案操作                                                                  |
-| **Intl.DateTimeFormat**         | 進行多語系與地區格式化處理                                                                  |
-| **normalize.css**               | 統一瀏覽器預設樣式，提升樣式一致性                                                          |
+- **React**  
+  建立 SPA 架構，使用 Functional Component 撰寫 UI。
 
----
+- **React Hooks**  
+  使用 `useState`, `useEffect`, `useMemo` 管理狀態與效能優化。
+
+- **Emotion (`@emotion/styled`)**  
+  採用 CSS-in-JS 方案撰寫元件樣式，強化樣式模組化與維護性。
+
+- **中央氣象局開放資料 API**  
+  天氣資料來源，提供全台各地氣溫、降雨機率、日出日落時間等（[官方 Swagger 文件](https://opendata.cwa.gov.tw/dist/opendata-swagger.html)）。
+
+- **PWA (Progressive Web App)**  
+  使用 `serviceWorkerRegistration` 提供離線快取與應用緩存功能，支援離線使用。
+
+- **dotenv**  
+  管理 API 金鑰等環境變數，提升安全性與可配置性。
+
+- **dayjs**  
+  輕量級的日期處理函式庫，處理日出日落時間、轉換時間格式等用途。
+
+- **node-fetch**  
+  用於伺服器端的 API 呼叫，支援抓取遠端天氣資料。
+
+- **fs / path 模組**  
+  處理本地端檔案操作與路徑管理，應用於伺服器端預處理。
+
+- **Intl.DateTimeFormat**  
+  提供多語系日期格式顯示與在地化支援。
+
+- **normalize.css**  
+  統一不同瀏覽器預設樣式行為，保持樣式一致性。
 
 ## 🧩 功能亮點
 
